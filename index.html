@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MJ Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -17,6 +17,7 @@
       background-color: #f8f5ef;
       padding: 2rem;
       text-align: center;
+      position: relative;
     }
     header img {
       width: 120px;
@@ -25,6 +26,17 @@
     header h1 {
       font-size: 2rem;
       color: #b48b3f;
+    }
+    .lang-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #b48b3f;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
     }
     section {
       padding: 3rem 1rem;
@@ -46,23 +58,35 @@
       font-size: 0.9rem;
       color: #777;
     }
+    .es { display: none; }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="MJ Solutions Logo">
     <h1>MJ Solutions</h1>
-    <p>Conectando oportunidades de negocio entre USA y Latinoamérica</p>
+    <p class="en">Connecting business opportunities between the USA and Latin America</p>
+    <p class="es">Conectando oportunidades de negocio entre USA y Latinoamérica</p>
+    <button class="lang-toggle" onclick="toggleLang()">ES / EN</button>
   </header>
 
-  <section id="sobre">
-    <h2>Sobre nosotros</h2>
-    <p>Somos MJ Solutions, una compañía dedicada a la reventa de productos desde USA hacia Latinoamérica. Nos especializamos en la distribución al por mayor, asegurando confiabilidad, eficiencia y un trato directo con nuestros clientes.</p>
+  <section>
+    <h2 class="en">About us</h2>
+    <h2 class="es">Sobre nosotros</h2>
+    <p class="en">We are MJ Solutions, a company dedicated to reselling products from the USA to Latin America. We specialize in wholesale distribution, ensuring reliability, efficiency, and a direct relationship with our clients.</p>
+    <p class="es">Somos MJ Solutions, una compañía dedicada a la reventa de productos desde USA hacia Latinoamérica. Nos especializamos en la distribución al por mayor, asegurando confiabilidad, eficiencia y un trato directo con nuestros clientes.</p>
   </section>
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
+  <section>
+    <h2 class="en">Services</h2>
+    <h2 class="es">Servicios</h2>
+    <ul class="en">
+      <li>Purchase and shipping of products from the USA</li>
+      <li>Personalized advice in product selection</li>
+      <li>Consolidation and international logistics</li>
+      <li>Spanish-speaking customer service and process tracking</li>
+    </ul>
+    <ul class="es">
       <li>Compra y envío de productos desde USA</li>
       <li>Asesoría personalizada en selección de productos</li>
       <li>Consolidación y logística internacional</li>
@@ -70,9 +94,11 @@
     </ul>
   </section>
 
-  <section id="marcas">
-    <h2>Marcas que manejamos</h2>
-    <p>Trabajamos con marcas reconocidas en el mercado estadounidense, como:</p>
+  <section>
+    <h2 class="en">Brands we work with</h2>
+    <h2 class="es">Marcas que manejamos</h2>
+    <p class="en">We work with well-known US brands, such as:</p>
+    <p class="es">Trabajamos con marcas reconocidas en el mercado estadounidense, como:</p>
     <ul>
       <li>Amazon</li>
       <li>Walmart</li>
@@ -82,9 +108,11 @@
     </ul>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Estás listo para hacer crecer tu negocio? ¡Contáctanos!</p>
+  <section>
+    <h2 class="en">Contact</h2>
+    <h2 class="es">Contacto</h2>
+    <p class="en">Ready to grow your business? Get in touch!</p>
+    <p class="es">¿Estás listo para hacer crecer tu negocio? ¡Contáctanos!</p>
     <ul>
       <li><strong>Email:</strong> contacto@mjsolutions.com</li>
       <li><strong>WhatsApp:</strong> +1 234 567 8900</li>
@@ -93,7 +121,16 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 MJ Solutions. Todos los derechos reservados.</p>
+    <p>&copy; 2025 MJ Solutions. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleLang() {
+      const es = document.querySelectorAll('.es');
+      const en = document.querySelectorAll('.en');
+      es.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+      en.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+    }
+  </script>
 </body>
 </html>
