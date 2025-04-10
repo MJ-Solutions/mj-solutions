@@ -58,10 +58,14 @@
       font-size: 0.9rem;
       color: #777;
     }
-    .es { display: none; }
+    .en, .es { display: none; }
+    .lang-en .en { display: block; }
+    .lang-en .en ul { display: block; }
+    .lang-es .es { display: block; }
+    .lang-es .es ul { display: block; }
   </style>
 </head>
-<body>
+<body class="lang-en">
   <header>
     <img src="logo.png" alt="MJ Solutions Logo">
     <h1>MJ Solutions</h1>
@@ -126,10 +130,14 @@
 
   <script>
     function toggleLang() {
-      const es = document.querySelectorAll('.es');
-      const en = document.querySelectorAll('.en');
-      es.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
-      en.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+      const body = document.body;
+      if (body.classList.contains("lang-en")) {
+        body.classList.remove("lang-en");
+        body.classList.add("lang-es");
+      } else {
+        body.classList.remove("lang-es");
+        body.classList.add("lang-en");
+      }
     }
   </script>
 </body>
