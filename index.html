@@ -4,156 +4,182 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MJ American Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f5f5f5;
       color: #333;
-      line-height: 1.6;
     }
+
     header {
-      background-color: #f8f5ef;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
+      background: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
     header img {
-      width: 120px;
+      height: 50px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('assets/bg-header.jpg') no-repeat center center/cover;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
-    header h1 {
-      font-size: 2rem;
-      color: #b48b3f;
-    }
-    .lang-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #b48b3f;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 8px;
-    }
+
     section {
-      padding: 3rem 1rem;
-      max-width: 800px;
+      padding: 3rem 2rem;
+      max-width: 1000px;
       margin: auto;
     }
-    h2 {
-      color: #b48b3f;
-      margin-bottom: 1rem;
+
+    .brands-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 2rem;
+      padding: 1rem 0;
+      scroll-snap-type: x mandatory;
     }
-    ul {
-      margin-top: 0.5rem;
-      padding-left: 1.5rem;
+
+    .brands-carousel img {
+      height: 60px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
     }
-    footer {
-      background-color: #f8f5ef;
+
+    .countries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .country {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
+      width: 200px;
     }
-    .en, .es { display: none; }
-    .lang-en .en { display: block; }
-    .lang-en .en ul { display: block; }
-    .lang-es .es { display: block; }
-    .lang-es .es ul { display: block; }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .lang-toggle {
+      background: white;
+      color: #111;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
   </style>
 </head>
-<body class="lang-en">
+<body>
   <header>
-    <img src="logo.png" alt="MJ American Solutions Logo">
-    <h1>MJ American Solutions</h1>
-    <p class="en">Connecting business opportunities between the USA and Latin America</p>
-    <p class="es">Conectando oportunidades de negocio entre USA y Latinoamérica</p>
-    <button class="lang-toggle" onclick="toggleLang()">ES / EN</button>
+    <img src="assets/logo.png" alt="MJ American Solutions" />
+    <nav>
+      <a href="#about" data-en="About us" data-es="Sobre nosotros">About us</a>
+      <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+      <a href="#brands" data-en="Brands" data-es="Marcas">Brands</a>
+      <a href="#presence" data-en="Global Presence" data-es="Presencia Global">Global Presence</a>
+      <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+      <button class="lang-toggle" onclick="toggleLanguage()">ES</button>
+    </nav>
   </header>
 
-  <section>
-    <h2 class="en">About us</h2>
-    <h2 class="es">Sobre nosotros</h2>
-    <p class="en">We are MJ American Solutions, a company dedicated to reselling products from the USA to Latin America. We specialize in wholesale distribution, ensuring reliability, efficiency, and a direct relationship with our clients.</p>
-    <p class="es">Somos MJ American Solutions, una compañía dedicada a la reventa de productos desde USA hacia Latinoamérica. Nos especializamos en la distribución al por mayor, asegurando confiabilidad, eficiencia y un trato directo con nuestros clientes.</p>
+  <div class="hero">
+    <h1 data-en="Your Wholesale Bridge from USA to Latin America" data-es="Tu puente de compras al por mayor desde USA a Latinoamérica">
+      Your Wholesale Bridge from USA to Latin America
+    </h1>
+    <p data-en="Reliable sourcing, competitive pricing, and seamless logistics." data-es="Abastecimiento confiable, precios competitivos y logística sin complicaciones.">
+      Reliable sourcing, competitive pricing, and seamless logistics.
+    </p>
+  </div>
+
+  <section id="about">
+    <h2 data-en="About us" data-es="Sobre nosotros">About us</h2>
+    <p data-en="MJ American Solutions is a wholesale company connecting top U.S. brands with Latin American retailers. Our mission is to provide accessible, high-quality products across borders." 
+       data-es="MJ American Solutions es una empresa mayorista que conecta las principales marcas estadounidenses con minoristas de América Latina. Nuestra misión es ofrecer productos de alta calidad y accesibles más allá de las fronteras.">
+      MJ American Solutions is a wholesale company connecting top U.S. brands with Latin American retailers. Our mission is to provide accessible, high-quality products across borders.
+    </p>
   </section>
 
-  <section>
-    <h2 class="en">Services</h2>
-    <h2 class="es">Servicios</h2>
-    <ul class="en">
-      <li>Purchase and shipping of products from the USA</li>
-      <li>Personalized advice in product selection</li>
-      <li>Consolidation and international logistics</li>
-      <li>Spanish-speaking customer service and process tracking</li>
-    </ul>
-    <ul class="es">
-      <li>Compra y envío de productos desde USA</li>
-      <li>Asesoría personalizada en selección de productos</li>
-      <li>Consolidación y logística internacional</li>
-      <li>Atención en español y seguimiento en todo el proceso</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 class="en">Brands we work with</h2>
-    <h2 class="es">Marcas que manejamos</h2>
-    <p class="en">We work with well-known US brands, such as:</p>
-    <p class="es">Trabajamos con marcas reconocidas en el mercado estadounidense, como:</p>
+  <section id="services">
+    <h2 data-en="Services" data-es="Servicios">Services</h2>
     <ul>
-       <li>Milwaukee</li>
-      <li>Stanley</li>
-      <li>Hasbro</li>
-      <li>ACER</li>
-      <li>JBL</li>
-      <li>Lattafa</li>
-     <li>Amazon Basics</li>
+      <li data-en="Wholesale distribution of branded goods" data-es="Distribución mayorista de productos de marca">Wholesale distribution of branded goods</li>
+      <li data-en="Sourcing and logistics from the USA" data-es="Abastecimiento y logística desde USA">Sourcing and logistics from the USA</li>
+      <li data-en="Support for Latin American businesses" data-es="Soporte para negocios en Latinoamérica">Support for Latin American businesses</li>
     </ul>
   </section>
 
-  <!-- Nueva sección de presencia internacional -->
-  <section>
-    <h2 class="en">Our international presence</h2>
-    <h2 class="es">Nuestra presencia internacional</h2>
-    <p class="en">MJ American Solutions is proud to operate in multiple countries across the Americas. Our commercial and logistical reach extends to:</p>
-    <p class="es">En MJ American Solutions nos enorgullece operar en varios países de América. Nuestro alcance comercial y logístico llega a:</p>
-    <ul>
-      <li>Colombia</li>
-      <li>Peru</li>
-      <li>Mexico</li>
-      <li>United States of America</li>
-    </ul>
+  <section id="brands">
+    <h2 data-en="Brands we work with" data-es="Marcas que manejamos">Brands we work with</h2>
+    <div class="brands-carousel">
+      <img src="assets/milwaukee.png" alt="Milwaukee" />
+      <img src="assets/dewalt.png" alt="DeWalt" />
+      <img src="assets/hasbro.png" alt="Hasbro" />
+      <img src="assets/lattafa.png" alt="Lattafa" />
+      <img src="assets/hydrapeak.png" alt="Hydrapeak" />
+    </div>
   </section>
 
-  <section>
-    <h2 class="en">Contact</h2>
-    <h2 class="es">Contacto</h2>
-    <p class="en">Ready to grow your business? Get in touch!</p>
-    <p class="es">¿Estás listo para hacer crecer tu negocio? ¡Contáctanos!</p>
-    <ul>
-      <li><strong>Email:</strong> Gerenciacomercial@gammacg.com</li>
-      <li><strong>WhatsApp:</strong> +57 3188444429</li>
-  
-    </ul>
+  <section id="presence">
+    <h2 data-en="Our Global Presence" data-es="Nuestra Presencia Global">Our Global Presence</h2>
+    <div class="countries">
+      <div class="country"><strong>🇺🇸 USA</strong><br>Headquarters</div>
+      <div class="country"><strong>🇨🇴 Colombia</strong><br>Sales & Support</div>
+      <div class="country"><strong>🇵🇪 Peru</strong><br>Retail Distribution</div>
+      <div class="country"><strong>🇲🇽 Mexico</strong><br>Warehouse Network</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-en="Get in touch" data-es="Contáctanos">Get in touch</h2>
+    <p data-en="Ready to work together? Contact us today and let’s make it happen!" 
+       data-es="¿Listos para trabajar juntos? ¡Contáctanos hoy y hagámoslo realidad!">
+      Ready to work together? Contact us today and let’s make it happen!
+    </p>
+    <p><strong>Email:</strong> contacto@mjamericansolutions.com</p>
+    <p><strong>WhatsApp:</strong> +1 (XXX) XXX-XXXX</p>
   </section>
 
   <footer>
-    <p>&copy; 2024 MJ American Solutions from the Gamma Solutions group. All rights reserved.</p>
+    <p>© 2025 MJ American Solutions del grupo Gamma Solutions. All rights reserved.</p>
   </footer>
 
   <script>
-    function toggleLang() {
-      const body = document.body;
-      if (body.classList.contains("lang-en")) {
-        body.classList.remove("lang-en");
-        body.classList.add("lang-es");
-      } else {
-        body.classList.remove("lang-es");
-        body.classList.add("lang-en");
-      }
+    let lang = 'en';
+
+    function toggleLanguage() {
+      lang = lang === 'en' ? 'es' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+      document.querySelector('.lang-toggle').innerText = lang === 'en' ? 'ES' : 'EN';
     }
   </script>
 </body>
