@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-</body>
-</html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -35,34 +32,30 @@
       font-weight: bold;
     }
 
-    .hero {
-  background: url('bg-header.jpg') no-repeat center center/cover;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: black;
-  background-blend-mode: lighten;
-}
-    .hero-text {
-  background-color: rgba(255, 255, 255, 0.8); /* fondo blanco translúcido */
-  padding: 1rem;
-  border-radius: 12px;
-  display: inline-block;
-  max-width: 800px;
-  margin: 1rem auto;
-  color: black;
-}
+    .lang-toggle {
+      background: white;
+      color: #111;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-    <div class="hero">
-  <h1 class="hero-text" data-en="Your Wholesale Bridge from USA to Latin America" data-es="Tu puente de compras al por mayor desde USA a Latinoamérica">
-    Your Wholesale Bridge from USA to Latin America
-  </h1>
-  <p class="hero-text" data-en="Reliable sourcing, competitive pricing, and seamless logistics." data-es="Abastecimiento confiable, precios competitivos y logística sin complicaciones.">
-    Reliable sourcing, competitive pricing, and seamless logistics.
-  </p>
-</div>
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+    .hero {
+      background: url('bg-header.jpg') no-repeat center center/cover;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero-text {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: black;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin: 1rem auto;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     section {
@@ -107,24 +100,12 @@
       padding: 2rem;
       text-align: center;
     }
-
-    .lang-toggle {
-      background: white;
-      color: #111;
-      border: none;
-      padding: 0.4rem 0.8rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
- <header>
-  <div style="display: flex; align-items: center; gap: 0.8rem;">
+  <header>
     <img src="logo.png" alt="MJ American Solutions" />
-    <span style="color: white; font-size: 1.3rem; font-weight: bold;">MJ - American Solutions</span>
-  </div>
-  <nav>
+    <nav>
       <a href="#about" data-en="About us" data-es="Sobre nosotros">About us</a>
       <a href="#services" data-en="Services" data-es="Servicios">Services</a>
       <a href="#brands" data-en="Brands" data-es="Marcas">Brands</a>
@@ -135,10 +116,10 @@
   </header>
 
   <div class="hero">
-    <h1 data-en="Your Wholesale Bridge from USA to Latin America" data-es="Tu puente de compras al por mayor desde USA a Latinoamérica">
+    <h1 class="hero-text" data-en="Your Wholesale Bridge from USA to Latin America" data-es="Tu puente de compras al por mayor desde USA a Latinoamérica">
       Your Wholesale Bridge from USA to Latin America
     </h1>
-    <p data-en="Reliable sourcing, competitive pricing, and seamless logistics." data-es="Abastecimiento confiable, precios competitivos y logística sin complicaciones.">
+    <p class="hero-text" data-en="Reliable sourcing, competitive pricing, and seamless logistics." data-es="Abastecimiento confiable, precios competitivos y logística sin complicaciones.">
       Reliable sourcing, competitive pricing, and seamless logistics.
     </p>
   </div>
