@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MJ American Solutions</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,15 +15,27 @@
 
     header {
       background: #111;
-      color: black;
+      color: white;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    header img {
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-title img {
       height: 50px;
+    }
+
+    .logo-title span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
     }
 
     nav a {
@@ -32,30 +45,24 @@
       font-weight: bold;
     }
 
-    .lang-toggle {
-      background: white;
-      color: #111;
-      border: none;
-      padding: 0.4rem 0.8rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
     .hero {
       background: url('bg-header.jpg') no-repeat center center/cover;
       padding: 4rem 2rem;
       text-align: center;
+      color: black;
     }
 
-    .hero-text {
-      background-color: rgba(255, 255, 255, 0.85);
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
       color: black;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      display: inline-block;
-      margin: 1rem auto;
-      max-width: 800px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-shadow: 2px 2px 5px white;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: black;
+      text-shadow: 2px 2px 5px white;
     }
 
     section {
@@ -100,11 +107,23 @@
       padding: 2rem;
       text-align: center;
     }
+
+    .lang-toggle {
+      background: white;
+      color: #111;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="MJ American Solutions" />
+    <div class="logo-title">
+      <img src="logo.png" alt="MJ American Solutions Logo" />
+      <span>MJ American Solutions</span>
+    </div>
     <nav>
       <a href="#about" data-en="About us" data-es="Sobre nosotros">About us</a>
       <a href="#services" data-en="Services" data-es="Servicios">Services</a>
@@ -116,10 +135,10 @@
   </header>
 
   <div class="hero">
-    <h1 class="hero-text" data-en="Your Wholesale Bridge from USA to Latin America" data-es="Tu puente de compras al por mayor desde USA a Latinoamérica">
+    <h1 data-en="Your Wholesale Bridge from USA to Latin America" data-es="Tu puente de compras al por mayor desde USA a Latinoamérica">
       Your Wholesale Bridge from USA to Latin America
     </h1>
-    <p class="hero-text" data-en="Reliable sourcing, competitive pricing, and seamless logistics." data-es="Abastecimiento confiable, precios competitivos y logística sin complicaciones.">
+    <p data-en="Reliable sourcing, competitive pricing, and seamless logistics." data-es="Abastecimiento confiable, precios competitivos y logística sin complicaciones.">
       Reliable sourcing, competitive pricing, and seamless logistics.
     </p>
   </div>
@@ -162,30 +181,4 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2 data-en="Get in touch" data-es="Contáctanos">Get in touch</h2>
-    <p data-en="Ready to work together? Contact us today and let’s make it happen!" 
-       data-es="¿Listos para trabajar juntos? ¡Contáctanos hoy y hagámoslo realidad!">
-      Ready to work together? Contact us today and let’s make it happen!
-    </p>
-    <p><strong>Email:</strong> Gerenciacomercial@gammacg.com</p>
-    <p><strong>WhatsApp:</strong> +57 3188444429</p>
-  </section>
-
-  <footer>
-    <p>© 2025 MJ American Solutions del grupo Gamma Solutions. All rights reserved.</p>
-  </footer>
-
-  <script>
-    let lang = 'en';
-
-    function toggleLanguage() {
-      lang = lang === 'en' ? 'es' : 'en';
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.innerText = el.getAttribute(`data-${lang}`);
-      });
-      document.querySelector('.lang-toggle').innerText = lang === 'en' ? 'ES' : 'EN';
-    }
-  </script>
-</body>
-</html>
+  <
