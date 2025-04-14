@@ -180,5 +180,30 @@
       <div class="country"><strong> Mexico</strong><br></div>
     </div>
   </section>
+  
+  <section id="contact">
+    <h2 data-en="Get in touch" data-es="Contáctanos">Get in touch</h2>
+    <p data-en="Ready to work together? Contact us today and let’s make it happen!" 
+       data-es="¿Listos para trabajar juntos? ¡Contáctanos hoy y hagámoslo realidad!">
+      Ready to work together? Contact us today and let’s make it happen!
+    </p>
+    <p><strong>Email:</strong> Gerenciacomercial@gammacg.com</p>
+    <p><strong>WhatsApp:</strong> +57 3188444429</p>
+  </section>
 
-  <
+  <footer>
+    <p>© 2025 MJ American Solutions del grupo Gamma Solutions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let lang = 'en';
+    function toggleLanguage() {
+      lang = lang === 'en' ? 'es' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+      document.querySelector('.lang-toggle').innerText = lang === 'en' ? 'ES' : 'EN';
+    }
+  </script>
+</body>
+</html>
